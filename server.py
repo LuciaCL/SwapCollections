@@ -1,16 +1,17 @@
-
 from flask import Flask
 from flask import jsonify
-from flask import request
+import app.user.user_handler
 
-app = Flask(__name__)
+server_app = Flask(__name__)
 
 
-@app.route('/hello', methods=['GET'])
+@server_app.route('/hello', methods=['GET'])
 def hello():
-   print("Hello is executed!")
-   return jsonify({'user' : 'David'})
+    print("Hello is executed!")
+    result = app.user.user_handler.post_user()
+    print(result)
+    return jsonify({'user': 'algo'})
 
 
 if __name__ == '__main__':
-   app.run(debug=True)
+    server_app.run(debug=True)
