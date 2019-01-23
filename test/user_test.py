@@ -35,5 +35,26 @@ class UserTests(unittest.TestCase):
 		# When  pass all validation
 		validation = validations_user(user1)
 		# Then  continue
-		
 		self.assertFalse(validation, 'email error')
+
+	def test_get_users(self):
+		#given
+		#when looking for the users
+		#then return all users
+		pass
+
+	def test_get_user_by_email(self):
+		# Given an User with the email set already in DB
+		# and we receive an user object with the email we are looking for set
+		email = "blabla@bla.com"
+		user1 = User(None, None, None, email, None)
+		# When we find with that user
+		user = find_user(user1)
+		# then we expect the result user to have the email we are looking for.
+		self.assertEqual(user.email, email)
+
+	def test_get_user_by_id(self):
+		# given id
+		# when looking for the user
+		# then return user name
+		pass

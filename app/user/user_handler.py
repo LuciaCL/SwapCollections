@@ -30,6 +30,10 @@ def delete_user(user_id):
     db.users.delete_one({'_id': user_id})
 
 
+def find_user(user):
+    return user
+
+
 def validations_user(user):
 
     # TODO password_match(user.password,user.re_)
